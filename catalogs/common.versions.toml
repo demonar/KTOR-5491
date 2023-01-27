@@ -1,0 +1,42 @@
+[versions]
+#Project versioning
+library-group = "com.example.shared"
+library-version = "0.0.1"
+
+#Base plugins
+android = "7.3.0" #update to 7.4.0 on the next Android studio update
+kotlin = "1.7.21" #update to 1.8.0 on the next Android studio update
+
+#ios
+ios-summary = "Shared library"
+ios-homepage = "https://github.com/demonar/KTOR-5491"
+ios-authors = "Alejandro Moya"
+ios-deployment-target = "14.1"
+ios-basename = "SharedLib"
+
+#common libs
+kotlinx-serialization = "1.4.1"
+kotlinx-coroutines = { strictly = "1.6.4", require = "1.6.4" }
+kotlinx-datetime = "0.4.0"
+ktor = "2.2.2"
+
+[libraries]
+kotlin-stdlib = { module = "org.jetbrains.kotlin:kotlin-stdlib-common", version.ref = "kotlin" }
+kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinx-coroutines" }
+kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinx-serialization" }
+kotlinx-datetime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version.ref = "kotlinx-datetime" }
+#Ktor
+ktor-core = { module = "io.ktor:ktor-client-core", version.ref = "ktor" }
+ktor-logging = { module = "io.ktor:ktor-client-logging", version.ref = "ktor" }
+ktor-serialization = { module = "io.ktor:ktor-client-serialization", version.ref = "ktor" }
+ktor-negotiation = { module = "io.ktor:ktor-client-content-negotiation", version.ref = "ktor" }
+ktor-json = { module = "io.ktor:ktor-serialization-kotlinx-json", version.ref = "ktor" }
+ktor-client-okhttp = { module = "io.ktor:ktor-client-okhttp", version.ref = "ktor" }
+ktor-client-ios = { module = "io.ktor:ktor-client-darwin", version.ref = "ktor" }
+
+[plugins]
+multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+android-lib = { id = "com.android.library", version.ref = "android"}
+android-app = { id = "com.android.application", version.ref = "android"}
